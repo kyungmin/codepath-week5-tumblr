@@ -13,6 +13,12 @@
 		CD51B52F1AA697DB00DE9C5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD51B52E1AA697DB00DE9C5A /* Images.xcassets */; };
 		CD51B5321AA697DB00DE9C5A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD51B5301AA697DB00DE9C5A /* LaunchScreen.xib */; };
 		CD51B53E1AA697DB00DE9C5A /* TumblrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51B53D1AA697DB00DE9C5A /* TumblrTests.swift */; };
+		CD51B5481AA69AA500DE9C5A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51B5471AA69AA500DE9C5A /* TabBarViewController.swift */; };
+		CD51B54A1AA69AD100DE9C5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51B5491AA69AD100DE9C5A /* HomeViewController.swift */; };
+		CD51B54C1AA69FD400DE9C5A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51B54B1AA69FD400DE9C5A /* SearchViewController.swift */; };
+		CD51B54E1AA69FFA00DE9C5A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51B54D1AA69FFA00DE9C5A /* ComposeViewController.swift */; };
+		CD51B5501AA6A14900DE9C5A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51B54F1AA6A14900DE9C5A /* AccountViewController.swift */; };
+		CD51B5521AA6A20600DE9C5A /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51B5511AA6A20600DE9C5A /* TrendingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		CD51B5371AA697DB00DE9C5A /* TumblrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TumblrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD51B53C1AA697DB00DE9C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD51B53D1AA697DB00DE9C5A /* TumblrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrTests.swift; sourceTree = "<group>"; };
+		CD51B5471AA69AA500DE9C5A /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CD51B5491AA69AD100DE9C5A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CD51B54B1AA69FD400DE9C5A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CD51B54D1AA69FFA00DE9C5A /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		CD51B54F1AA6A14900DE9C5A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		CD51B5511AA6A20600DE9C5A /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,12 @@
 				CD51B52E1AA697DB00DE9C5A /* Images.xcassets */,
 				CD51B5301AA697DB00DE9C5A /* LaunchScreen.xib */,
 				CD51B5251AA697DB00DE9C5A /* Supporting Files */,
+				CD51B5471AA69AA500DE9C5A /* TabBarViewController.swift */,
+				CD51B5491AA69AD100DE9C5A /* HomeViewController.swift */,
+				CD51B54B1AA69FD400DE9C5A /* SearchViewController.swift */,
+				CD51B54D1AA69FFA00DE9C5A /* ComposeViewController.swift */,
+				CD51B54F1AA6A14900DE9C5A /* AccountViewController.swift */,
+				CD51B5511AA6A20600DE9C5A /* TrendingViewController.swift */,
 			);
 			path = Tumblr;
 			sourceTree = "<group>";
@@ -212,8 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD51B54C1AA69FD400DE9C5A /* SearchViewController.swift in Sources */,
+				CD51B5521AA6A20600DE9C5A /* TrendingViewController.swift in Sources */,
 				CD51B52A1AA697DB00DE9C5A /* ViewController.swift in Sources */,
+				CD51B5501AA6A14900DE9C5A /* AccountViewController.swift in Sources */,
+				CD51B5481AA69AA500DE9C5A /* TabBarViewController.swift in Sources */,
+				CD51B54E1AA69FFA00DE9C5A /* ComposeViewController.swift in Sources */,
 				CD51B5281AA697DB00DE9C5A /* AppDelegate.swift in Sources */,
+				CD51B54A1AA69AD100DE9C5A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
