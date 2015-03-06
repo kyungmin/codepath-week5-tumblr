@@ -8,9 +8,19 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-
+class ComposeViewController: UIViewController, UIViewControllerTransitioningDelegate {
+    
+    @IBOutlet weak var textIcon: UIImageView!
+    @IBOutlet weak var photoIcon: UIImageView!
+    @IBOutlet weak var quoteIcon: UIImageView!
+    @IBOutlet weak var linkIcon: UIImageView!
+    @IBOutlet weak var chatIcon: UIImageView!
+    @IBOutlet weak var videoIcon: UIImageView!
+   
     var isPresenting: Bool = true
+    
+    var icons = []
+    var delay: NSTimeInterval = 0
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,46 +31,50 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        icons = [textIcon, photoIcon, quoteIcon, linkIcon, chatIcon, videoIcon]
 
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        println("animating transition")
-        var containerView = transitionContext.containerView()
-        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        
-        if (isPresenting) {
-            containerView.addSubview(toViewController.view)
-            toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                toViewController.view.alpha = 1
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-            }
-        } else {
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                fromViewController.view.alpha = 0
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-                    fromViewController.view.removeFromSuperview()
-            }
+        // set initial icon y position
+        for icon in icons as [UIImageView] {
+            icon.center.y = 568 + icon.frame.height / 2
         }
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.4
+    override func viewWillAppear(animated: Bool) {
+        
+        for icon in self.icons as [UIImageView] {
+            
+            // generate random delays
+            delay = NSTimeInterval(arc4random_uniform(100)) / 500
+
+            UIView.animateWithDuration(0.4, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 20, options: nil, animations: { () -> Void in
+
+                if (icon.tag < 3) {
+                    icon.center.y = 145
+                } else {
+                    icon.center.y = 285
+                }
+            }, completion: nil)
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+
+        for icon in self.icons as [UIImageView] {
+            
+            // generate random delays
+            delay = NSTimeInterval(arc4random_uniform(100)) / 500
+            
+            UIView.animateWithDuration(0.4, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 20, options: nil, animations: { () -> Void in
+                
+                // move icons up
+                icon.center.y = -icon.frame.height / 2
+                
+                }, completion: nil)
+        }
     }
     
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = true
-        return self
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = false
-        return self
+    @IBAction func didPressDismissButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,7 +83,7 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,6 +91,6 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

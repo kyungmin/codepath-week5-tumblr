@@ -40,7 +40,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="didPressButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r9Z-EP-lqQ"/>
+                                            <action selector="didPressComposeButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fa6-fa-hbD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ftz-HB-ggN" userLabel="accountButton">
@@ -92,11 +92,12 @@
                         <outlet property="homeButton" destination="pSc-KH-YLq" id="K83-bp-pUC"/>
                         <outlet property="searchButton" destination="WpU-Gk-E6q" id="1M5-pb-U8M"/>
                         <outlet property="trendingButton" destination="5iY-fg-T9X" id="d1K-I4-RQw"/>
+                        <segue destination="Iej-Ha-hx2" kind="modal" identifier="composeSegue" id="vdT-JQ-eja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="623"/>
+            <point key="canvasLocation" x="161" y="628"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="CMv-zx-7HR">
@@ -150,47 +151,61 @@
         <scene sceneID="beM-R3-YIR">
             <objects>
                 <viewController storyboardIdentifier="composeStory" id="Iej-Ha-hx2" customClass="ComposeViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="pLz-Hk-Dga">
+                    <view key="view" contentMode="scaleToFill" id="pLz-Hk-Dga">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.85000000000000009" contentMode="scaleToFill" id="pNm-1z-DNf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.27450980390000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="text_icon" id="iGh-Om-Er9">
-                                <rect key="frame" x="23" y="145" width="75" height="95"/>
+                                <rect key="frame" x="20" y="145" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_icon" id="Xrc-KG-2ed">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" image="photo_icon" id="Xrc-KG-2ed">
                                 <rect key="frame" x="123" y="145" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="quote_icon" id="5gO-HU-zbZ">
-                                <rect key="frame" x="229" y="145" width="75" height="96"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" image="quote_icon" id="5gO-HU-zbZ">
+                                <rect key="frame" x="225" y="145" width="75" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="link_icon" id="iV6-q8-GS1">
-                                <rect key="frame" x="23" y="283" width="75" height="95"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="center" image="link_icon" id="iV6-q8-GS1">
+                                <rect key="frame" x="20" y="285" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="chat_icon" id="Sll-RX-cS3">
-                                <rect key="frame" x="123" y="282" width="75" height="96"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="center" image="chat_icon" id="Sll-RX-cS3">
+                                <rect key="frame" x="123" y="285" width="75" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="video_icon" id="uqA-oO-2Z5">
-                                <rect key="frame" x="229" y="280" width="75" height="95"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="center" image="video_icon" id="uqA-oO-2Z5">
+                                <rect key="frame" x="225" y="285" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RTL-h8-xFi">
-                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RTL-h8-xFi">
+                                <rect key="frame" x="0.0" y="509" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.19215686269999999" green="0.27450980390000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Nevermind">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressDismissButton:" destination="Iej-Ha-hx2" eventType="touchUpInside" id="zsb-Kf-uyB"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.19215686269999999" green="0.27450980390000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="chatIcon" destination="Sll-RX-cS3" id="9Hb-Xt-Lv9"/>
+                        <outlet property="linkIcon" destination="iV6-q8-GS1" id="lou-Zm-kxC"/>
+                        <outlet property="photoIcon" destination="Xrc-KG-2ed" id="UIe-bX-fV0"/>
+                        <outlet property="quoteIcon" destination="5gO-HU-zbZ" id="9Z7-bw-3re"/>
+                        <outlet property="textIcon" destination="iGh-Om-Er9" id="dgF-AM-G3u"/>
+                        <outlet property="videoIcon" destination="uqA-oO-2Z5" id="Vaz-ub-IgQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrU-ZS-5dM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
