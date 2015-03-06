@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>85E18A09-D911-4C0A-B8A9-23DFBF1DAED0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tumblr</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B608E49A5E4520F4F0F271B6E6B902410D711BFF</key>
+		<string>https://github.com/kyungmin/codepath-week5-tumblr.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tumblr.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B608E49A5E4520F4F0F271B6E6B902410D711BFF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kyungmin/codepath-week5-tumblr.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B608E49A5E4520F4F0F271B6E6B902410D711BFF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B608E49A5E4520F4F0F271B6E6B902410D711BFF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Tumblr</string>
+		</dict>
+	</array>
+</dict>
+</plist>

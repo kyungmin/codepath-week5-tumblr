@@ -25,6 +25,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     @IBOutlet weak var composeButton: UIButton!
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var trendingButton: UIButton!
+    @IBOutlet weak var exploreBubble: UIImageView!
     
     var tabVCs = []
     var tabButtons = []
@@ -50,6 +51,14 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
         currentVC.view.frame = contentView.frame
         contentView.addSubview(currentVC.view)
         currentVC.didMoveToParentViewController(self)
+        
+        // bubble animation
+        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            self.exploreBubble.transform = CGAffineTransformMakeTranslation(0, 10)
+            }) { (finished: Bool) -> Void in
+                //
+        }
+
     }
 
     func removeChildView(content: UIViewController) {
@@ -75,6 +84,15 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
         selectedVC.didMoveToParentViewController(self)
         currentVC = selectedVC
         button.selected = true
+        
+        // hide bubble if search tab is selected
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            if (self.currentVC == self.searchVC) {
+                self.exploreBubble.alpha = 0
+            } else {
+                self.exploreBubble.alpha = 1
+            }
+        })
     }
     
     @IBAction func didPressComposeButton(sender: AnyObject) {
