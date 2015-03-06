@@ -10,12 +10,34 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var loginForm: UIImageView!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loginForm.alpha = 0
+        cancelButton.alpha = 0
+        loginForm.transform = CGAffineTransformMakeScale(0.7, 0.7)
     }
 
+    @IBAction func didPressLogin(sender: AnyObject) {
+        UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: {
+            self.loginForm.transform = CGAffineTransformMakeScale(1, 1)
+            self.loginForm.alpha = 1
+            self.cancelButton.alpha = 1
+            }, completion: nil)
+    }
+    
+    @IBAction func didPressCancel(sender: AnyObject) {
+        UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: {
+            self.loginForm.transform = CGAffineTransformMakeScale(0.7, 0.7)
+            self.loginForm.alpha = 0
+            self.cancelButton.alpha = 0
+            
+            }, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
